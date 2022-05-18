@@ -1,7 +1,7 @@
 import { IsWalletConnectedGuard } from './core/guards/is-wallet-connected.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConnectComponent } from './core/components/connect/connect.component';
+import { ConnectComponent } from './modules/connect/connect.component';
 import { IsWalletNotConnectedGuard } from './core/guards/is-wallet-notConnected.guard';
 
 const routes: Routes = [
