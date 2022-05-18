@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 // Gif Material
 import { GifsMaterialModule } from './gifs-material.module';
 // Declarações
-import { GifsListComponent } from './list/list.component';
+import { ListGifsComponent } from './list/list.component';
 import { gifsRoutes } from './gifs.routing';
+import { AddGifsComponent } from './add/add.component';
 
 @NgModule({
-  declarations: [GifsListComponent],
+  declarations: [ListGifsComponent, AddGifsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(gifsRoutes),

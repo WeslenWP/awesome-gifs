@@ -6,7 +6,7 @@ import { GifsService } from '../gifs.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
-export class GifsListComponent implements OnInit {
+export class ListGifsComponent implements OnInit {
   items: any;
   alert: boolean = false;
   constructor(private _gifService: GifsService) { }
