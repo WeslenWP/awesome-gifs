@@ -9,20 +9,9 @@ import { GifsService } from '../gifs.service';
 export class GifsListComponent implements OnInit {
   items: any;
   alert: boolean = false;
-  constructor(private _gifService: GifsService) {}
+  constructor(private _gifService: GifsService) { }
 
   ngOnInit(): void {
-    this._gifService
-      .checkIfWalletIsConnected()
-      .then((res) => {
-        if (res) {
-          this._gifService.getGifs().then((res) => {
-            this.items = res;
-          });
-        } else {
-          console.log(res);
-        }
-      })
-      .catch((err) => console.log(err));
+    this._gifService.getGifs().then((res) => this.items = res);
   }
 }
