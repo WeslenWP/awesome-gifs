@@ -1,0 +1,19 @@
+<div class="warn text-3xl sm:text-4xl">
+  <div class="flex flex-row items-center justify-center">
+    <span>Conecte sua carteira</span>
+    <a href="https://metamask.io/download/" target="_blank">
+      <span class="font-medium text-orange-400 inline-flex items-center w-fit">
+        &nbsp;
+        <span>
+          <img height="43" width="43" src="https://ipfs.io/ipfs/QmQMoQ9oyZhWsWq9ir9VAPwBcQJK2pme7yHQA3wSnxi4Gd" alt="">
+        </span>
+        MetaMask&nbsp;
+      </span>
+    </a>
+    <span>para continuar</span>
+  </div>
+
+  <button mat-raised-button color="accent" class="text-lg hover:bg-yellow-500" (click)="start()">
+    Conecta{{isConnectingWallet?'ndo':'r'}}
+  </button>
+</div>
