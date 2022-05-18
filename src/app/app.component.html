@@ -1,1 +1,20 @@
+<mat-toolbar color="primary">
+  <div class="flex flex-row justify-between items-center w-full gap-2">
+    <span>Awesome Gifs</span>
+    <div class="flex gap-1" *ngIf="account.wallet">
+      <div>
+        <button color="primary" mat-raised-button class="text-md">
+          Adicionar GIF
+        </button>
+      </div>
+      <!-- TO DO -->
+      <div *ngIf="false">
+        <div class="text-sm break-all flex flex-col whitespace-normal">
+          <span class="leading-none">Carteira: </span><span class="font-semibold text-xs">{{account.wallet}}</span>
+        </div>
+      </div>
+      <!-- --- -->
+    </div>
+  </div>
+</mat-toolbar>
 <router-outlet></router-outlet>
