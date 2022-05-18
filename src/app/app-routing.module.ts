@@ -1,5 +1,8 @@
+import { IsWalletConnectedGuard } from './core/guards/is-wallet-connected.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ConnectComponent } from './core/components/connect/connect.component';
+import { IsWalletNotConnectedGuard } from './core/guards/is-wallet-notConnected.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'gifs' },
@@ -7,11 +10,21 @@ const routes: Routes = [
     path: 'gifs',
     loadChildren: () =>
       import('./modules/gifs/gifs.module').then((m) => m.GifsModule),
+    canActivate: [IsWalletConnectedGuard],
+    canLoad: [IsWalletConnectedGuard]
   },
+  {
+    path: 'connect',
+    component: ConnectComponent,
+    canActivate: [IsWalletNotConnectedGuard],
+    canLoad: [IsWalletNotConnectedGuard]
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
